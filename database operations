@@ -1,0 +1,38 @@
+import java.sql.*;
+
+public class jdbcprogram
+{
+
+public static void main(String[] args) throws Exception
+{
+Connection con=null;
+Class.forName("com.mysql.cj.jdbc.Driver");
+con=DriverManager.getConnection("jdbc:mysql://localhost:3584/MoviesList","spread","ttc@1234");
+}
+}
+Public boolean createTopMovieList(long Position, String Name, String Director)
+{
+Statement stmt=con.createStatement();
+String SQL="create table MovieList(int Position , Name varchar(20) not null,Director varchar(30) not null)";
+stmt.executeUpdate(SQL);
+
+}
+public boolean InsertMovieList(int Position , Name varchar(20) ,Director varchar(30))
+{
+Statement stmt1=con.createStatement();
+String sql1="INSERT MovieList values" +"(1,'RRR','rajamouli')";
+stmt1.executeUpdate(sql1);
+}
+
+public Boolean deleteMovieList(int Position )
+{
+Statement stmt3=con.createStatement();
+String sql2="DELETE from MovieList WHERE Position=3");
+stmt3.executeUpdate(sql2)
+}
+public boolean updateMovieList(int Position , Name varchar(20) ,Director varchar(30))
+{
+Statement stmt2=con.createStatement();
+String sql3="UPDATE MovieList set Name='Batman' WHERE Position=4";
+Stmt2.executeUpdate(sql3);
+}
